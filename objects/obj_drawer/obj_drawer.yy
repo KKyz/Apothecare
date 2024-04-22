@@ -1,7 +1,10 @@
 {
   "$GMObject":"",
   "%Name":"obj_drawer",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_drawer",
   "overriddenProperties":[],
@@ -27,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_drawer_closed",
+    "path":"sprites/spr_drawer_closed/spr_drawer_closed.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
