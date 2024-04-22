@@ -58,7 +58,6 @@
     {"id":{"name":"spr_background_evening","path":"sprites/spr_background_evening/spr_background_evening.yy",},},
     {"id":{"name":"spr_background_noon","path":"sprites/spr_background_noon/spr_background_noon.yy",},},
     {"id":{"name":"spr_btn","path":"sprites/spr_btn/spr_btn.yy",},},
-    {"id":{"name":"spr_button","path":"sprites/spr_button/spr_button.yy",},},
     {"id":{"name":"spr_cauldron","path":"sprites/spr_cauldron/spr_cauldron.yy",},},
     {"id":{"name":"spr_clear_btn","path":"sprites/spr_clear_btn/spr_clear_btn.yy",},},
     {"id":{"name":"spr_customer_temp","path":"sprites/spr_customer_temp/spr_customer_temp.yy",},},

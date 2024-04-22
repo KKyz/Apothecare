@@ -17,8 +17,9 @@ sus_bar_x = 0;
 sus_bar_y = 0;
 
 
-bg_cols = [ #fbff00, #00ff40, #3c00ff];
-time = 0;
+bg_cols = [ #bcff8f, #bcff8f, #8fa2ff];
+time = 2;
+layer_background_blend(layer_background_get_id("Background"), bg_cols[time]);
 transition_speed = 1;
 
 audio_pause_all();
