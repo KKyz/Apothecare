@@ -1,0 +1,1 @@
+bg_sprite = bg_sprites[global.time];

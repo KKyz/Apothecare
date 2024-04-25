@@ -1,3 +1,4 @@
+magical = my_ingredient == MAGICAL.HOLLOW_BERRY or my_ingredient == MAGICAL.NIGHT_BLOOM or my_ingredient == MAGICAL.MAGIC7 ? true : false;
 clicked = mouse_check_button_pressed(mb_left);
 
 if (not empty)
@@ -31,7 +32,7 @@ if (not empty)
 		
 		if (place_meeting(x, y, obj_cauldron) and can_fit)
 		{
-			ds_list_add(global.cauldron, my_tea);
+			ds_list_add(global.cauldron, my_ingredient);
 			x = xstart;
 			y = ystart;
 			empty = true;
