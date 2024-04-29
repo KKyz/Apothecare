@@ -27,7 +27,7 @@ if (ds_list_size(global.cauldron) >= 1)
 {
 	if (obj_mix_btn == pointer_null)
 	{
-		obj_mix_btn = instance_create_depth(-10, 573, -5, obj_mix_cauldron_btn);
+		obj_mix_btn = instance_create_depth(-10, 573, -1, obj_mix_cauldron_btn);
 	}
 }
 

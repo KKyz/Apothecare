@@ -1,4 +1,3 @@
-
 if not (recieved_order and target_x - x < 1)
 {
 	x = lerp(x, target_x, move_speed);

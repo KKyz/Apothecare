@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Spr_Fade",
-    "path":"sprites/Spr_Fade/Spr_Fade.yy",
+    "name":"spr_fade",
+    "path":"sprites/spr_fade/spr_fade.yy",
   },
   "spriteMaskId":null,
   "visible":true,

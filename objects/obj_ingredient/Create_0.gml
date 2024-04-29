@@ -1,30 +1,33 @@
-return_speed = 0.1;
+move_speed = 0.1;
 held = false;
 empty = false;
 my_sprite = sprite_index;
 my_tag = spr_bere_tag;
+restock_tag = spr_restock_tag;
+current_tag = my_tag;
+anim_count = 0;
+clickable = true;
+to_target = false;
 
 
-dx = 0;
-dy = 0;
-mouse_xprev = mouse_x;
-mouse_yprev = mouse_y;
+target_x = 183;
+target_y = 315;
 
 //Values will be changed by children
 magical = false;
-my_ingredient = TEAS.BERGAMOT;
+my_ingredient = TEAS.BERE;
 price = 100;
 
 enum TEAS
 {
-	BERGAMOT,
-	CHAMOMILLE,
-	PEPPERMINT
+	BERE,
+	CHRYS,
+	VALERIAN
 }
 
 enum MAGICAL
 {
-	HOLLOW_BERRY,
-	NIGHT_BLOOM,
-	MAGIC7
+	HOLLOW,
+	NIGHT,
+	SWAMP
 }

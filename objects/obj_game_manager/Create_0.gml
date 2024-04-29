@@ -1,10 +1,10 @@
-global.carrying = false;
 global.cauldron_limit = 3;
 global.suspicion = 0;
 global.sus_limit = 100;
 global.day = 0;
 global.time = 1;
 global.money = 1000;
+global.popup_active = false;
 global.cauldron = ds_list_create();
 global.customers = ds_list_create();
 
@@ -29,7 +29,7 @@ music_indicator = spr_sound_off;
 function next_customer()
 {
 	ds_list_clear(global.cauldron);
-	
+	instance_create_layer(331, 107, "Characters", obj_customer); 	
 	if (global.time == 2)
 	{
 		next_day();
@@ -37,7 +37,6 @@ function next_customer()
 	else
 	{
 		global.time += 1;
-		bg_sprite = bg_sprites[global.time];
 	}
 }
 
@@ -45,6 +44,7 @@ function next_day()
 {
 	global.day += 1;
 	global.time = 0;
+	next_customer();
 	
 	for (var i = 0; i < 2; i += 1)
 	{
