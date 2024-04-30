@@ -5,7 +5,7 @@ if (keyboard_check_pressed(vk_f2))
 
 if (keyboard_check_pressed(ord("A")))
 {
-	next_customer();
+	increment_time();
 }
 
 if (keyboard_check_pressed(vk_f1))
@@ -44,12 +44,13 @@ if (keyboard_check(vk_alt) and keyboard_check(vk_enter))
 }
 
 //Background Coloring
-var _current_bg = bg_cols[global.time];
-var _target_bg = bg_cols[global.time + 1];
-var _bg_fade = 0;
+bg_current = bg_cols[global.time];
 
-if (_bg_fade < 1)
-{
-	_bg_fade += 0.01;
-	layer_background_blend(bg_col, merge_color(_current_bg, _target_bg, _bg_fade));
-}
+bg_prev = global.time == 0 ?  bg_cols[2] :  bg_cols[clamp(global.time - 1, 0, 2)];
+
+if layer_background_get_blend(bg) != bg_current
+	bg_fade += transition_speed;
+
+bg_fade = clamp(bg_fade, 0, 1);
+
+layer_background_blend(bg, merge_color(bg_prev, bg_current, bg_fade));

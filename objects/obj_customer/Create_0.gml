@@ -12,6 +12,7 @@ my_order = "";
 speech = pointer_null;
 
 speech = instance_create_depth(987, 408, depth - 100, obj_speech);
+surf_window = surface_create(738, 415);
 
 with (speech)
 {

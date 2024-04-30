@@ -2,7 +2,7 @@ global.cauldron_limit = 3;
 global.suspicion = 0;
 global.sus_limit = 100;
 global.day = 0;
-global.time = 1;
+global.time = 2;
 global.money = 1000;
 global.popup_active = false;
 global.cauldron = ds_list_create();
@@ -15,10 +15,13 @@ sus_bar_height = 0;
 sus_bar_x = 0;
 sus_bar_y = 0;
 
-bg_col = layer_background_get_id("Background");
-bg_cols = [ #fdff8f, #bcff8f, #8fa2ff];
-layer_background_blend(bg_col, bg_cols[global.time]);
-transition_speed = 1;
+bg = layer_background_get_id("Background");
+bg_cols = [ #ebe702, #bcff8f, #8fa2ff];
+bg_fade = 0;
+bg_current = bg_cols[global.time];
+bg_prev = bg_cols[global.time];
+layer_background_blend(bg, merge_color(bg_prev, bg_current, bg_fade));
+transition_speed = .01;
 
 music_pause = true;
 audio_pause_all();
@@ -43,13 +46,19 @@ function next_customer()
 function next_day()
 {
 	global.day += 1;
-	global.time = 0;
-	next_customer();
+	increment_time()
+	//next_customer();
 	
 	for (var i = 0; i < 2; i += 1)
 	{
 		//global.customers = ds_list_add();
 	}
+}
+
+function increment_time()
+{
+	bg_fade = 0;
+	global.time = global.time >= 2 ? 0 : global.time + 1;
 }
 
 next_day();

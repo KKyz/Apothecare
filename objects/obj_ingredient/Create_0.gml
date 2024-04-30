@@ -13,6 +13,11 @@ to_target = false;
 target_x = 183;
 target_y = 315;
 
+btn_frame = 0;
+btn_on = false;
+btn_dir = -1;
+btn_spd = 1;
+
 //Values will be changed by children
 magical = false;
 my_ingredient = TEAS.BERE;
