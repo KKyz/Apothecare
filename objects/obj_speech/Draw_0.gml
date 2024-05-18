@@ -1,9 +1,9 @@
-
 //For the wave text
 t++;
 
 draw_self();
 draw_set_font(fnt_speech);
+depth = -2;
 
 //How many messages are in the array
 message_end = array_length(message);
@@ -122,8 +122,8 @@ if (message_end > 0)
 			
 			default:
 			{
-				draw_set_color(c_white);
-				draw_text(tX + (space * char_width), tY + (13 * line) + shift, string_char_at(message[message_current], i));
+				draw_set_color(c_black);
+				draw_text(tX + (space * char_width), tY + (13 * line), string_char_at(message[message_current], i));
 				break;
 			}
 		}
@@ -131,4 +131,13 @@ if (message_end > 0)
 		space++;
 		i++;
 	}
+}
+
+if (message_current == message_end - 1)
+	instance_destroy(obj_text_arrow);
+	
+if (global.new_customer)
+{
+	instance_create_depth(x + (sprite_width/2) - 30, y + (sprite_height/2) - 50, -2, obj_text_arrow);
+	global.new_customer = false;
 }

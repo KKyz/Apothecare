@@ -1,5 +1,5 @@
 image_alpha = position_meeting(mouse_x, mouse_y, id) ? 1 : 0.5;
-depth = -2;
+depth = -4;
 
 x = obj_full_popup.x;
 

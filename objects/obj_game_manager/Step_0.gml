@@ -5,7 +5,17 @@ if (keyboard_check_pressed(vk_f2))
 
 if (keyboard_check_pressed(ord("A")))
 {
-	increment_time();
+	next_customer();
+}
+
+if (keyboard_check_pressed(ord("S")))
+{
+	global.suspicion -= 20;
+}
+
+if (keyboard_check_pressed(ord("D")))
+{
+	global.suspicion += 20;
 }
 
 if (keyboard_check_pressed(vk_f1))
@@ -54,3 +64,13 @@ if layer_background_get_blend(bg) != bg_current
 bg_fade = clamp(bg_fade, 0, 1);
 
 layer_background_blend(bg, merge_color(bg_prev, bg_current, bg_fade));
+
+if ((global.money <= 0 and global.day > 3) or global.suspicion >= global.sus_limit)
+{
+	room_goto(rm_failure);
+}
+
+else if (global.day > 3)
+{
+	room_goto(rm_victory);
+}

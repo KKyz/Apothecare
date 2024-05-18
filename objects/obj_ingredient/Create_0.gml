@@ -6,6 +6,7 @@ my_tag = spr_bere_tag;
 restock_tag = spr_restock_tag;
 current_tag = my_tag;
 anim_count = 0;
+can_restock = false;
 clickable = true;
 to_target = false;
 

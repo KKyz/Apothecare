@@ -10,22 +10,25 @@ if (not empty and clickable)
 		{
 			to_target = true;
 			empty = true;
+			can_restock = false;
 			alarm[0] = 60;
 			ds_list_add(global.cauldron, my_ingredient);
+			audio_play_sound(snd_select, 0, false);
 		}
 	}
 	
-	else if (ds_list_size(global.cauldron) >= 3 and clicked and position_meeting(mouse_x, mouse_y, id))
+	else if (ds_list_size(global.cauldron) >= global.cauldron_limit and clicked and position_meeting(mouse_x, mouse_y, id))
 	{
 		global.popup_active = true;
 	}
 }
 
-else if (clicked and position_meeting(mouse_x, mouse_y, id) and clickable)
+else if (clicked and position_meeting(mouse_x, mouse_y, id) and clickable and can_restock)
 {
 	global.money -= price;
 	empty = false;
 	sprite_index = my_sprite;
+	audio_play_sound(snd_select, 0, false);
 }
 
 if (to_target)
@@ -39,4 +42,13 @@ else
 	y = lerp(y, ystart, move_speed);
 }
 
-current_tag = empty ? restock_tag : my_tag;
+if (empty)
+{
+	if (can_restock)
+		current_tag = restock_tag;
+	else
+		current_tag = pointer_null;
+}
+
+else
+	current_tag = my_tag;

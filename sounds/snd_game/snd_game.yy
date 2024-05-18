@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":127.84326,
+  "duration":135.79071,
   "name":"snd_game",
   "parent":{
     "name":"Sounds",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_game.mp3",
+  "soundFile":"snd_game.ogg",
   "type":0,
   "volume":1.0,
 }
